@@ -1,10 +1,10 @@
 #include <cstddef>
 #include <iostream>
 
-#ifdef _WIN32
+#if defined(_WIN32)
 	#include "window/window_win32.h"
 	#define NativeWindow Window_win32
-#elifdef __linux__
+#elif defined(__linux__)
 	#include "window/window_x11.h"
 	#define NativeWindow Window_x11
 #else
@@ -23,7 +23,7 @@ int main()
 		std::cout << "setup error: " + ret + '\n'; 
 		return -1;
 	}
-
+	std::cout << "created!\n";
 
 	ret = window->loop();
 	if(ret.empty() == false)
