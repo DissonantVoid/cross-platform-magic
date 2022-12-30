@@ -14,11 +14,12 @@ elseif(LINUX)
 				${SRC}
 				src/window/window_x11.cpp
 		)
-	
+endif()
+
+add_executable(${PROJECT_NAME} ${SRC})
+
+if(LINUX)
 	include_directories(/usr/X11R6/include)
 	link_directories(/usr/X11R6/lib)
 	target_link_libraries(${PROJECT_NAME} X11)
 endif()
-
-
-add_executable(${PROJECT_NAME} ${SRC})
