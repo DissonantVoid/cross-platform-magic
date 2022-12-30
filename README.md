@@ -1,2 +1,1 @@
-# cross-platform-magic
-A learning project, creates a simple cross-platform window
+A learning project, the goal is to make a cross platform c++ native window program (that's a fancy description) that runs both on windows(win32) and linux(X11) with the help of cmake
